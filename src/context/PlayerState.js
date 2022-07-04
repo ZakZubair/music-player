@@ -48,9 +48,10 @@ const PlayerState = (props) => {
         }
     }
 
-    // Remove
+    // Remove song
     const toggleRemove = (id) => {
-        dispatch({ type: TOGGLE_REMOVE, data: state.repeat ? false : true })
+        state.songList.splice(id, 1);
+        dispatch({ type: TOGGLE_REMOVE, data: state.songList })
     }
 
     // End of Song
@@ -62,9 +63,7 @@ const PlayerState = (props) => {
         <playerContext.Provider
             value={{
                 currentSong: state.currentSong,
-                songs: state.songs,
                 songList: state.songList,
-                remove: state.remove,
                 playing: state.playing,
                 audio: state.audio,
                 nextSong,

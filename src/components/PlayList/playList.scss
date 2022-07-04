@@ -1,25 +1,27 @@
 @import '../../styles/mixins';
 
 .playlist {
-    background: #e3e3e3;
+    background: #1a1c22;
     flex: 1 1;
     display: flex;
     flex-direction: column;
 }
 
-.selected {
-    background: white;
-}
-
-.playlist .header {}
-
 .songContainer {
     cursor: pointer;
-    // user-select: none;
-}
 
-.pltext {
-    padding: 5px;
+    &:hover,
+    &.selected {
+        .songMeta_playlist {
+            .songName {
+                color: #333;
+            }
+
+            .songAuthors {
+                color: #555;
+            }
+        }
+    }
 }
 
 .loi {
@@ -28,15 +30,26 @@
     display: flex;
     flex-direction: column;
     flex: 1 1;
-    padding: 0;
+    padding: 16px;
 }
 
 .loi li {
-    margin: 2px;
+    margin: 2px 2px 8px;
     font-weight: 450;
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    &.selected {
+        background: rgba(255, 255, 255, 0.9);
+    }
 }
 
 .loi li:hover {
@@ -44,23 +57,38 @@
 }
 
 .song-thumb {
-    height: 65px;
-    width: 65px;
+    height: 50px;
+    width: 50px;
     background-size: contain;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @include breakpoint-md {
-        height: 35px;
-        width: 35px;
-    }
+    border-radius: 20%;
 }
 
 .songMeta_playlist {
     width: 100%;
+
+    .songName {
+        padding: 0 10px;
+        font-weight: 600;
+        font-size: 0.825rem;
+        color: #fff;
+
+        @include breakpoint-md {
+            font-size: 0.75rem;
+        }
+    }
+
+    .songAuthors {
+        padding: 0 10px;
+        font-weight: normal;
+        color: #ccc;
+        font-size: 0.75rem;
+    }
 }
+
 
 .songlist {
     overflow-y: auto;
@@ -70,28 +98,10 @@
     display: flex;
     flex-direction: column;
     flex: 1 1;
-
 }
 
 .songProgress {
     display: flex;
-}
-
-.songName {
-    padding: 0 10px;
-    font-weight: 600;
-    font-size: 1.125rem;
-
-    @include breakpoint-md {
-        font-size: 0.75rem;
-    }
-}
-
-.songAuthors {
-    padding: 0 10px;
-    font-weight: normal;
-    color: #555;
-    font-size: 0.875rem;
 }
 
 .playlist_button_group {
@@ -105,4 +115,8 @@
 .delete_song {
     color: #1A1C22;
     margin-right: 5px;
+
+    &:hover {
+        color: #555;
+    }
 }

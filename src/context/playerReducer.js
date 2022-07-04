@@ -5,13 +5,12 @@ import {
     TOGGLE_REMOVE,
 } from './types'
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default (state, action) => {
+const playerReducer = (state, action) => {
     switch (action.type) {
         case SET_SONGS_ARRAY:
             return {
                 ...state,
-                songs: action.data,
+                songList: action.data,
             }
         case SET_CURRENT_SONG:
             return {
@@ -27,9 +26,11 @@ export default (state, action) => {
         case TOGGLE_REMOVE:
             return {
                 ...state,
-                remove: action.data,
+                songList: action.data,
             }
         default:
             return state
     }
 }
+
+export default playerReducer

@@ -4,11 +4,10 @@ import playerContext from '../../context/playerContext'
 import './playList.scss'
 
 const Playlist = () => {
-    const { setCurrent, currentSong, songList } = useContext(playerContext)
+    const { setCurrent, currentSong, songList, toggleRemove } = useContext(playerContext)
 
-    const handleRemoveSong = (song) => {
-        // TODO: Remove the song
-        console.log(`Remove the song - ${song['Track Name']}`)
+    const handleRemoveSong = (i) => {
+        toggleRemove(i)
     }
 
     return (
@@ -33,11 +32,11 @@ const Playlist = () => {
                                 <span className="songAuthors">{song['Artist Name(s)']}</span>
                             </div>
                             <div className="playlist_button_group">
-                                <button className="delete_song playlist_btn" onClick={() => handleRemoveSong(song)}>
+                                <button className="delete_song playlist_btn" onClick={() => handleRemoveSong(i)}>
                                     <i className="fas fa-trash-alt fa-lg"></i>
                                 </button>
                                 <button className="sort_song playlist_btn">
-                                    <i className="fas fa-ellipsis-v fa-lg"></i>
+                                    <i className="fa-solid fa-sort"></i>
                                 </button>
                             </div>
                         </li>
