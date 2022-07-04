@@ -14,8 +14,7 @@ const PlayerState = (props) => {
     const initialState = {
         currentSong: 0,
         songList: songList,
-        playing: false,
-        audio: null,
+        playing: false
     }
     const [state, dispatch] = useReducer(playerReducer, initialState)
 
@@ -24,8 +23,9 @@ const PlayerState = (props) => {
         dispatch({ type: SET_SONGS_ARRAY, data: songArr })
 
     // Set playing state
-    const togglePlaying = () =>
+    const togglePlaying = () => {
         dispatch({ type: TOGGLE_PLAYING, data: state.playing ? false : true })
+    }
 
     // Set current song
     const setCurrent = (id) => dispatch({ type: SET_CURRENT_SONG, data: id })
@@ -65,7 +65,6 @@ const PlayerState = (props) => {
                 currentSong: state.currentSong,
                 songList: state.songList,
                 playing: state.playing,
-                audio: state.audio,
                 nextSong,
                 prevSong,
                 setCurrent,

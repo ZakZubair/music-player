@@ -26,9 +26,9 @@ const MusicPlayer = () => {
     }
 
     // TODO: Endpoint needs to set up CORS https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-    useEffect(() => {
-        getSongs()
-    }, [getSongs])
+    // useEffect(() => {
+    //     getSongs()
+    // }, [getSongs])
 
     return (
         <div className="main">

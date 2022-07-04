@@ -44,7 +44,11 @@ const Controls = () => {
         if (playing) {
             toggleAudio()
         }
-    }, [currentSong, playing, stateVolume])
+
+        if (songList[currentSong]['Track Preview URL'] === '') {
+            nextSong()
+        }
+    }, [currentSong, nextSong, playing, songList, stateVolume])
 
     return (
         <div className="controls">
