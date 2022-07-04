@@ -1,0 +1,108 @@
+@import '../../styles/mixins';
+
+.playlist {
+    background: #e3e3e3;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.selected {
+    background: white;
+}
+
+.playlist .header {}
+
+.songContainer {
+    cursor: pointer;
+    // user-select: none;
+}
+
+.pltext {
+    padding: 5px;
+}
+
+.loi {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    padding: 0;
+}
+
+.loi li {
+    margin: 2px;
+    font-weight: 450;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.loi li:hover {
+    background-color: #dfdfdf;
+}
+
+.song-thumb {
+    height: 65px;
+    width: 65px;
+    background-size: contain;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint-md {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+.songMeta_playlist {
+    width: 100%;
+}
+
+.songlist {
+    overflow-y: auto;
+}
+
+.songmeta {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+
+}
+
+.songProgress {
+    display: flex;
+}
+
+.songName {
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 1.125rem;
+
+    @include breakpoint-md {
+        font-size: 0.75rem;
+    }
+}
+
+.songAuthors {
+    padding: 0 10px;
+    font-weight: normal;
+    color: #555;
+    font-size: 0.875rem;
+}
+
+.playlist_button_group {
+    width: 60px;
+}
+
+.song_duration {
+    color: #555;
+}
+
+.delete_song {
+    color: #1A1C22;
+    margin-right: 5px;
+}

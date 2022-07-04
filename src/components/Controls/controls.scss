@@ -1,0 +1,252 @@
+@import '../../styles/mixins';
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    height: 110px;
+    background: #1A1C22;
+    color: white;
+    align-items: center;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    .volume {
+        display: flex;
+        align-content: center;
+        overflow: hidden;
+        width: 25px;
+        transition: all 500ms;
+        position: absolute;
+        left: 0;
+    }
+
+    .volume:hover {
+        width: 90px;
+    }
+
+    .volume__item {
+        padding: 10px;
+    }
+
+    #volBar {
+        padding: 0;
+        margin: 0;
+        width: 50px;
+        background: transparent;
+    }
+
+    .musicControls {
+        margin-left: 90px;
+        min-width: 120px;
+    }
+
+    .musicControls span {
+        cursor: pointer;
+    }
+
+    .musicControls span:hover {
+        color: #3a3a3a;
+    }
+
+    .play {
+        background: #724392;
+        padding: 13px 18px;
+        border-radius: 100%;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+        position: relative;
+        z-index: 3;
+    }
+
+    .play {
+        &:active {
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    .prev {
+        background: #724392;
+        border-radius: 10px 0 0px 10px;
+        padding-left: 15px;
+        padding-right: 10px;
+        margin-right: -5px;
+        z-index: 1;
+    }
+
+    .next {
+        background: #724392;
+        border-radius: 0px 10px 10px 0px;
+        padding-right: 15px;
+        padding-left: 10px;
+        margin-left: -5px;
+        z-index: 1;
+    }
+
+    .progress-bar {
+        margin-left: 20px;
+        flex: 1 1;
+    }
+
+    .songMeta {
+        display: flex;
+        margin-bottom: 6px;
+
+        .song-thumb {
+            border-radius: 100%;
+
+            @include breakpoint-md {
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+
+    .songTitleContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .songTitle {
+        display: block;
+        font-size: 1.125em;
+        font-weight: 600;
+
+        @include breakpoint-md {
+            font-size: 1em;
+        }
+
+        @include breakpoint-xs {
+            font-size: 0.75em;
+        }
+    }
+
+    .songartistName {
+        font-size: 0.8em;
+    }
+
+    #prgbar {
+        background: transparent;
+        width: 100%;
+    }
+
+    .currentTime,
+    .totalTime {
+        width: 35px;
+        margin: 0 10px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    input[type=range] {
+        width: 100%;
+        margin: 5.8px 0;
+        background-color: transparent;
+        -webkit-appearance: none;
+    }
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        background: #724392;
+        border: 4px solid #724392;
+        border-radius: 25px;
+        width: 100%;
+        height: 7.4px;
+        cursor: pointer;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        margin-top: -9.8px;
+        width: 20px;
+        height: 19px;
+        background: #724392;
+        border: 2.2px solid #ffffff;
+        border-radius: 12px;
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #804ba3;
+    }
+
+    input[type=range]::-moz-range-track {
+        background: #724392;
+        border: 4px solid #724392;
+        border-radius: 25px;
+        width: 100%;
+        height: 7.4px;
+        cursor: pointer;
+    }
+
+    input[type=range]::-moz-range-thumb {
+        width: 20px;
+        height: 19px;
+        background: #724392;
+        border: 2.2px solid #ffffff;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    input[type=range]::-ms-track {
+        background: transparent;
+        border-color: transparent;
+        border-width: 8.4px 0;
+        color: transparent;
+        width: 100%;
+        height: 7.4px;
+        cursor: pointer;
+    }
+
+    input[type=range]::-ms-fill-lower {
+        background: #643b81;
+        border: 4px solid #724392;
+        border-radius: 50px;
+    }
+
+    input[type=range]::-ms-fill-upper {
+        background: #724392;
+        border: 4px solid #724392;
+        border-radius: 50px;
+    }
+
+    input[type=range]::-ms-thumb {
+        width: 20px;
+        height: 19px;
+        background: #724392;
+        border: 2.2px solid #ffffff;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 0px;
+        /*Needed to keep the Edge thumb centred*/
+    }
+
+    input[type=range]:focus::-ms-fill-lower {
+        background: #724392;
+    }
+
+    input[type=range]:focus::-ms-fill-upper {
+        background: #804ba3;
+    }
+
+    /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+    how to remove the virtical space around the range input in IE*/
+    @supports (-ms-ime-align:auto) {
+
+        /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+        input[type=range] {
+            margin: 0;
+            /*Edge starts the margin from the thumb, not the track as other browsers do*/
+        }
+    }
+}

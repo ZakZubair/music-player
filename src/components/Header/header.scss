@@ -1,0 +1,31 @@
+header h3 {
+    font-weight: bold;
+    margin: 0;
+    padding: 10px;
+    background: #724392;
+    color: white;
+}
+
+.banner {
+    background: #1A1C22;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    img {
+        max-width: 150px;
+    }
+
+    .album_meta {
+        padding-left: 15px;
+    }
+
+    .alb_label {
+        font-size: 0.8em;
+    }
+}

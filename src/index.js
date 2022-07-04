@@ -1,10 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import { createRoot } from 'react-dom/client'
 import MusicPlayer from './MusicPlayer';
+import PlayerState from './context/PlayerState'
 
-ReactDOM.render(
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+root.render(
   <React.StrictMode>
-    <MusicPlayer />
+    <PlayerState>
+      <MusicPlayer />
+    </PlayerState>
   </React.StrictMode>,
-  document.getElementById('root')
 );

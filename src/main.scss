@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import './styles/mixins';
+
 * {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fff;
+
+}
+
+button {
+    background: none;
+    border: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.draggable {
+    -webkit-app-region: drag;
+}
+
+.no_drag {
+    -webkit-app-region: no-drag;
+}
+
+.top {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 120px;
+
+    @include breakpoint-md {
+        width: 100vw;
+    }
 }
