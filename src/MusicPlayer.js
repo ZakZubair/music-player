@@ -13,7 +13,7 @@ const MusicPlayer = () => {
     } = useContext(playerContext)
 
     // TODO: load from env variable
-    const url = 'https://d2dmhurcm7ukg1.cloudfront.net/static/sample-data/tracks.json';
+    // const url = 'https://d2dmhurcm7ukg1.cloudfront.net/static/sample-data/tracks.json';
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     // const getSongs = async () => {
