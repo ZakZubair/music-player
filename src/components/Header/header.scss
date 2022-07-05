@@ -1,9 +1,7 @@
-header h3 {
-    font-weight: bold;
-    margin: 0;
-    padding: 10px;
-    background: #724392;
-    color: white;
+header {
+    .logo {
+        width: 150px;
+    }
 }
 
 .banner {

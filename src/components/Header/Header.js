@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import playerContext from '../../context/playerContext'
 
+import logo from './music-player-logo.png'
 import './header.scss'
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
     return (
         <>
             <header className="draggable" >
-                <h3>🎵 Music Player 🎵</h3>
+                <img src={logo} alt="Music Player" className='logo' />
             </header >
             <div className="banner">
                 <img src={songList[currentSong]['Album Image URL']} alt={songList[currentSong]['Album Name']} />

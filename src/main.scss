@@ -12,7 +12,6 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #fff;
-
 }
 
 button {
@@ -38,6 +37,7 @@ button {
     justify-content: space-evenly;
     flex-grow: 1;
     padding-bottom: 120px;
+    background-color: #484b53;
 
     @include breakpoint-md {
         width: 100vw;
